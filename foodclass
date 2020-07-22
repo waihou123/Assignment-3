@@ -223,6 +223,9 @@ int row,col;
     
     private void ADDActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        try {
+            if(!(jTextFoodName.getText().equals("")||jTextTypeFood.getText().equals(""))){
+               
         String foodname = jTextFoodName.getText();
         String typefood = jTextTypeFood.getText();
         String typenutrients = jCBnutrients.getSelectedItem().toString();
@@ -234,6 +237,13 @@ int row,col;
         }
         //reset
         clearField();
+        } else{
+               JOptionPane.showMessageDialog(null,"Please fill in your ");
+            }
+        }
+            catch (Exception e){
+               JOptionPane.showMessageDialog(null,e.getMessage());
+        }
     }
     
     private void clearField(){
